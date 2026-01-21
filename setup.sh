@@ -13,10 +13,3 @@ cd portaudio || return
 ./configure
 sed -i "s/PREFIX = \/usr\/local/PREFIX = \/home\/data\/gesture-control-piano\/lib/g" Makefile
 make && make install
-
-# Font setup
-cd ..
-echo "Setting up fonts..."
-mkdir ~/.local/share/fonts/
-cp fonts/NotoColorEmoji-Regular.ttf ~/.local/share/fonts/
-fc-cache -f -v

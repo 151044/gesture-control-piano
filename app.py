@@ -11,6 +11,7 @@ from config import (
 )
 from model_handler import ModelHandler
 from piano import PianoKeyboard
+from tkinter.font import Font
 
 
 class MusicalGestureApp:
@@ -46,6 +47,7 @@ class MusicalGestureApp:
         else:
             self.__show_camera_error()
 
+        self._emoji_font = Font(family="Noto Color Emoji")
         # Bind cleanup on close
         self.root.protocol("WM_DELETE_WINDOW", self.__on_close)
 
@@ -330,7 +332,7 @@ class MusicalGestureApp:
         self.piano.set_muted(self._is_muted)
 
         if self._is_muted:
-            self.mute_button.configure(text="🔇 Sound Off")
+            self.mute_button.configure(text="🔇 Sound Off", )
         else:
             self.mute_button.configure(text="🔊 Sound On")
 
