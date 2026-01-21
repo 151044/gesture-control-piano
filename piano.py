@@ -147,7 +147,7 @@ class AudioPlayer:
 class PianoKeyboard(tk.Canvas):
     def __init__(self, parent, octaves: int = OCTAVE_COUNT,
                  starting_octave: int = STARTING_OCTAVE,
-                 on_key_press: Callable[[str], None] | None = None,
+                 on_key_press: Callable[[str], None] = None, # Callable[[str], None] | None
                  **kwargs):
         """
         Initialize the piano keyboard.

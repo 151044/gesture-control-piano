@@ -27,7 +27,7 @@ class Camera:
             self.__video_capture.release()
             self.__is_open = False
 
-    def read_frame(self) -> tuple[bool, np.ndarray | None]:
+    def read_frame(self) -> tuple[bool, np.ndarray]: # tuple[bool, np.ndarray | None]
         """
         Read a frame from the camera.
 
@@ -43,7 +43,7 @@ class Camera:
             frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
         return ret, frame
 
-    def get_frame_for_display(self, max_width: int = 400, max_height: int = 300) -> ImageTk.PhotoImage | None:
+    def get_frame_for_display(self, max_width: int = 400, max_height: int = 300) -> ImageTk.PhotoImage: # ImageTk.PhotoImage | None
         """
         Get a frame for display.
         :param max_width: Maximum width for the displayed frame.
@@ -64,7 +64,7 @@ class Camera:
         # Convert to PhotoImage
         return ImageTk.PhotoImage(Image.fromarray(frame))
 
-    def get_frame_for_model(self, target_size: tuple[int, int] = (224, 224)) -> np.ndarray | None:
+    def get_frame_for_model(self, target_size: tuple[int, int] = (224, 224)) -> np.ndarray: # np.ndarray | None
         """
         Get a frame for the ML model.
         :param target_size: Target size for the model input.

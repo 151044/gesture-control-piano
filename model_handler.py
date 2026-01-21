@@ -50,7 +50,7 @@ class ModelHandler:
             print(f"Model file not found at {self.__model_path}. Exiting.")
             sys.exit(0)
 
-    def predict(self, frame: np.ndarray) -> tuple[str | None, float]:
+    def predict(self, frame: np.ndarray) -> tuple[str, float]: # tuple[str | None, float]
         """
         Make a prediction on a frame.
         :param frame: Preprocessed frame for the model (batch_size, height, width, channels).
