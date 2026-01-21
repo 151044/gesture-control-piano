@@ -2,7 +2,7 @@
 
 # The Python venv
 echo "Setting up Python environment..."
-python -m venv piano-venv
+/usr/bin/python -m venv piano-venv
 source piano-venv/bin/activate
 pip install numpy pillow tensorflow sounddevice tf_keras opencv-python
 
