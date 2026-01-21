@@ -209,7 +209,8 @@ class MusicalGestureApp:
         # Capture toggle button
         self.capture_button = ttk.Button(
             button_container,
-            text="▶ Start Capture",
+            #text="▶ Start Capture",
+            text="Start Capture",
             style='Control.TButton',
             command=self.__toggle_capture
         )
@@ -218,7 +219,8 @@ class MusicalGestureApp:
         # Mute toggle button
         self.mute_button = ttk.Button(
             button_container,
-            text="🔊 Sound On",
+            #text="🔊 Sound On",
+            text="Sound On",
             style='Control.TButton',
             command=self.__toggle_mute
         )
@@ -227,7 +229,8 @@ class MusicalGestureApp:
         # Exit button
         self.exit_button = ttk.Button(
             button_container,
-            text="✕ Exit",
+            #text="✕ Exit",
+            text="Exit",
             style='Exit.TButton',
             command=self.__on_close
         )
@@ -332,9 +335,15 @@ class MusicalGestureApp:
         self.piano.set_muted(self._is_muted)
 
         if self._is_muted:
-            self.mute_button.configure(text="🔇 Sound Off", )
+            self.mute_button.configure(
+                    #text="🔇 Sound Off", 
+                    text="Sound Off", 
+                    )
         else:
-            self.mute_button.configure(text="🔊 Sound On")
+            self.mute_button.configure(
+                    #text="🔊 Sound On"
+                    text="Sound On"
+                    )
 
     def __on_piano_key_press(self, note_name: str):
         """
