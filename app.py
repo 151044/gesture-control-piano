@@ -270,11 +270,17 @@ class MusicalGestureApp:
         self._is_capturing = not self._is_capturing
 
         if self._is_capturing:
-            self.capture_button.configure(text="⏹ Stop Capture")
+            self.capture_button.configure(
+                    #text="⏹ Stop Capture"
+                    text="Stop Capture"
+                    )
             self.status_label.configure(text="Status: Capturing...", fg='#4CAF50')
             self.__start_model_inference()
         else:
-            self.capture_button.configure(text="▶ Start Capture")
+            self.capture_button.configure(
+                    #text="▶ Start Capture"
+                    text="Start Capture"
+                    )
             self.status_label.configure(text="Status: Stopped", fg='#aaaaaa')
             self.__stop_model_inference()
 
